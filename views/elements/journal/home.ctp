@@ -4,11 +4,11 @@
 	<p>
 		<?php
 			$category_link = $html->link($post['Category']['title'], array('controller' => 'categories', 'action' => 'view', $post['Category']['slug']));
-			printf(__('Published under %s', true), $category_link);
+			printf(__d('journal','Published under %s', true), $category_link);
 		?> | 
 		<?php
 			echo $html->link(
-				__('Continue reading...', true),
+				__d('journal','Continue reading...', true),
 				array('controller' => 'posts', 'action' => 'view', 'id' => $post['Post']['id'], 'slug' => $post['Post']['slug']),
 				array('class' => 'more')
 			);

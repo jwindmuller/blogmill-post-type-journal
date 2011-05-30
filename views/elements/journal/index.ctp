@@ -13,7 +13,7 @@
 		<?php echo $this->Blogmill->excerpt($post, 850); ?>
 		<?php
 			echo $this->Blogmill->postLink($post,
-				array('display' => __('Continue reading this journal entry...', true)),
+				array('display' => __d('journal','Continue reading this journal entry...', true)),
 				array('class' => 'call-to-action-link')
 			);
 		?>

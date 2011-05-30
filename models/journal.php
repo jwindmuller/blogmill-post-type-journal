@@ -25,8 +25,8 @@ class Journal extends JournalAppModel {
 	 * @author Joaquin Windmuller
 	 */
 	protected function __initializeValidation() {
-		$this->defineErrorMessage('title.required', __('The title is required', true));
-		$this->defineErrorMessage('title.maxLength', __('Maximum length is 255 character', true));
-		$this->defineErrorMessage('content.required', __('Write the content!', true));
+		$this->defineErrorMessage('title.required', __d('journal','The title is required', true));
+		$this->defineErrorMessage('title.maxLength', __d('journal','Maximum length is 255 character', true));
+		$this->defineErrorMessage('content.required', __d('journal','Write the content!', true));
 	}
 }
