@@ -1,21 +1,11 @@
-<div class="journal post-index-preview">
-	<?php echo $this->Blogmill->postEditLink($post); ?>
-	<h1>
-		<?php echo $this->Blogmill->postLink($post); ?>
-	</h1>
-	<?php
-		echo $this->Blogmill->postLink($post,
-			array('display' => $this->Blogmill->image($post, 'home_showcase')),
-			array('escape' => false)
-		);
-	?>
-	<p>
-		<?php echo $this->Blogmill->excerpt($post, 850); ?>
-		<?php
-			echo $this->Blogmill->postLink($post,
-				array('display' => __d('journal','Continue reading this journal entry...', true)),
-				array('class' => 'call-to-action-link')
-			);
-		?>
-	</p>
-</div>
+<?php
+$theme_view = APP . 'plugins' . DS . strtolower($activeThemePlugin) . DS .
+              'views' . DS . 'elements' . DS . $type . DS . 'index-post.ctp';
+if (is_file($theme_view)) {
+    $plugin =  $activeThemePlugin;
+}
+echo $this->element(
+    Inflector::underscore($type) . "/index-post",
+    array('plugin' => $plugin, 'post' => $post)
+);
+?>
